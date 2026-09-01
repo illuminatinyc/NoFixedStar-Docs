@@ -1,6 +1,6 @@
 # No Fixed Star
 
-![StingWasp transport](ibb.co/album/zVNJZv)
+![StingWasp transport](stingwasp-hero.jpg)
 
 **No Fixed Star** is a first-person space-western game about finding a crew, finding work, and keeping an aging ship flying. The player lives aboard a working transport, takes contracts between hard-used stations, manages fuel, repairs, cargo, and pay, and gradually builds a life around the people who share the ship.
 
