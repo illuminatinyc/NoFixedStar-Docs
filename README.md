@@ -2,7 +2,7 @@
 
 ![StingWasp transport](assets/ship/stingwasp-hero.jpg)
 
-**No Fixed Star** is a first-person space-trucker game about finding a crew, finding work, and keeping an aging ship flying. The player lives aboard a working transport, takes contracts between hard-used stations, manages fuel, repairs, cargo, and pay, and gradually builds a life around the people who share the ship.
+**No Fixed Star** is a first-person space-western game about finding a crew, finding work, and keeping an aging ship flying. The player lives aboard a working transport, takes contracts between hard-used stations, manages fuel, repairs, cargo, and pay, and gradually builds a life around the people who share the ship.
 
 The current playable prototype is deliberately small: one ship, two stations, one repeatable cargo loop, and one crew member. It exists to prove that the core fantasy is fun before the project expands.
 
