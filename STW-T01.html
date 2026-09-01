@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>STW-T01 StingWasp Transport</title>
+<style>
+:root{--bg:#090c10;--p:#11161c;--p2:#171d24;--line:#2a333d;--text:#eef3f7;--muted:#97a3ae;--a:#f0a62b;--a2:#ffd071;--ok:#65d59b;--bad:#ff6b66;--blue:#65a9ff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 20% 0,#221708 0,transparent 28%),var(--bg);color:var(--text);font:14px/1.45 Inter,Segoe UI,Arial,sans-serif}
+button,input{font:inherit}.app{display:grid;grid-template-columns:260px 1fr;min-height:100vh}.side{position:sticky;top:0;height:100vh;padding:18px 12px;background:#0c1014;border-right:1px solid var(--line);overflow:auto}
+.brand{padding:6px 8px 16px;border-bottom:1px solid var(--line)}.eyebrow{font-size:10px;letter-spacing:.17em;text-transform:uppercase;color:var(--a)}.brand h1{font-size:28px;line-height:.95;margin:8px 0}.brand small{color:var(--muted)}
+.nav{margin-top:14px}.nav button{width:100%;text-align:left;border:0;background:transparent;color:#b9c3cc;padding:10px;border-radius:8px;margin:2px 0}.nav button:hover,.nav button.on{background:var(--p2);color:white}.nav button.on{box-shadow:inset 3px 0 var(--a)}
+.main{min-width:0}.top{position:sticky;top:0;z-index:5;background:#0a0d11ee;backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:12px 20px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}.badges{display:flex;gap:6px;flex-wrap:wrap}.badge{padding:5px 8px;border:1px solid var(--line);border-radius:99px;background:#10151a;color:#aeb9c2;font-size:11px}.badge b{color:var(--a2)}
+.content{max-width:1500px;margin:auto;padding:22px}.sec{display:none}.sec.on{display:block}.card{background:linear-gradient(#12181e,#0f1419);border:1px solid var(--line);border-radius:14px;padding:18px}.grid{display:grid;gap:14px}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:14px}.k{color:var(--a);font-size:11px;letter-spacing:.14em;text-transform:uppercase}.title{font-size:44px;line-height:1;margin:7px 0 12px}.lead{font-size:17px;color:#c9d1d8;max-width:900px}.notice{border-left:3px solid var(--a);background:#191308;padding:12px;border-radius:0 8px 8px 0;color:#dcc7a3}
+.metric{border:1px solid var(--line);border-radius:10px;padding:12px;background:#0d1217}.metric b{display:block;font-size:25px}.metric span{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+h2,h3{margin-top:0}.muted{color:var(--muted)}.controls{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}.chip{border:1px solid var(--line);border-radius:99px;background:#11171d;color:#c4ced6;padding:7px 10px;cursor:pointer}.chip.on,.chip:hover{background:#22190c;border-color:#79591f;color:#ffd58b}
+.stage{border:1px solid var(--line);border-radius:12px;background:radial-gradient(circle,#1b2229,#0b0f13);overflow:hidden;min-height:430px}.stage svg{width:100%;height:430px}
+.deckwrap{display:grid;grid-template-columns:1fr 330px;gap:14px}.decksvg{border:1px solid var(--line);border-radius:10px;background:#0b1014;padding:8px}.decksvg svg{width:100%;height:500px}.list{max-height:500px;overflow:auto;display:grid;gap:7px}.item{border:1px solid var(--line);border-radius:8px;padding:9px;background:#10151a}.item b{display:block}.item small{color:var(--muted)}
+table{width:100%;border-collapse:collapse;min-width:760px}.table{overflow:auto;border:1px solid var(--line);border-radius:10px}th,td{padding:10px;border-bottom:1px solid #232b33;text-align:left;vertical-align:top}th{background:#151b21;color:#aeb8c1;font-size:10px;text-transform:uppercase;letter-spacing:.06em}
+input{width:100%;background:#0c1115;color:white;border:1px solid var(--line);border-radius:8px;padding:9px}.form{display:grid;grid-template-columns:1fr 1fr;gap:10px}.result{margin-top:12px;padding:12px;border:1px solid #33404a;border-radius:9px;background:#0c1115}.ok{color:var(--ok)}.bad{color:var(--bad)}
+.sys{position:relative;overflow:hidden}.sys:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--blue)}.bar{height:7px;background:#222a32;border-radius:99px;overflow:hidden}.bar i{display:block;height:100%;background:var(--a)}
+pre{white-space:pre-wrap;color:#bbc6ce;line-height:1.55}code{background:#181207;color:#ffd071;padding:2px 5px;border-radius:4px}
+@media(max-width:1000px){.app{grid-template-columns:1fr}.side{position:relative;height:auto}.hero,.deckwrap{grid-template-columns:1fr}.g4{grid-template-columns:1fr 1fr}}@media(max-width:650px){.content{padding:12px}.g2,.g3,.g4,.form{grid-template-columns:1fr}.title{font-size:35px}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="side">
+<div class="brand"><div class="eyebrow">Wayward Sky · Ship Bible</div><h1>STW‑T01<br>STINGWASP</h1><small>Light Multirole Transport</small></div>
+<div class="nav">
+<button class="on" data-sec="overview">Overview</button>
+<button data-sec="exterior">Exterior Anatomy</button>
+<button data-sec="decks">Deck Plans</button>
+<button data-sec="index">Compartment Index</button>
+<button data-sec="systems">Ship Systems</button>
+<button data-sec="pressure">Pressure Zones</button>
+<button data-sec="cargo">Cargo Planner</button>
+<button data-sec="crew">Crew & Berthing</button>
+<button data-sec="interfaces">Exterior Interfaces</button>
+<button data-sec="godot">Godot / MVP</button>
+</div>
+</aside>
+<main class="main">
+<div class="top"><b>STW‑T01 StingWasp Technical Interface</b><div class="badges"><span class="badge">Length <b>31.0 m</b></span><span class="badge">Beam <b>10.5 m</b></span><span class="badge">Height <b>8.2 m</b></span><span class="badge">Scale <b>1u = 1m</b></span></div></div>
+<div class="content">
+
+<section id="overview" class="sec on">
+<div class="hero">
+<div class="card"><div class="k">STW‑T01 · Light Multirole Transport</div><div class="title">STINGWASP</div><p class="lead">A compact independent transport built around wasp-inspired industrial biomimicry: a pointed forward head, layered armour, broad cargo abdomen, compact crew spaces and a machinery-heavy aft section. The ship deliberately has no wings. The wasp identity comes from proportion, segmentation, stance and clustered exterior systems.</p><div class="notice"><b>Canonical design rule:</b> the StingWasp is one physical ship. Exterior, decks, compartments, cargo volume, airlocks, landing gear and machinery must agree spatially.</div></div>
+<div class="card"><h3>Canonical Envelope</h3><div class="grid g2"><div class="metric"><b>31.0 m</b><span>Length</span></div><div class="metric"><b>10.5 m</b><span>Beam</span></div><div class="metric"><b>8.2 m</b><span>Height</span></div><div class="metric"><b>2 + S1</b><span>Deck Structure</span></div></div><p class="muted"><code>+Z</code> bow · <code>−Z</code> stern · <code>+X</code> starboard · <code>−X</code> port · <code>+Y</code> up</p></div>
+</div>
+<div class="grid g4" style="margin-top:14px"><div class="card"><div class="k">Zone A</div><h3>Nose</h3><p>Compound cockpit, controls, sensors and forward avionics.</p></div><div class="card"><div class="k">Zone B</div><h3>Crew</h3><p>Habitation, berthing, galley, commons, med and passenger spaces.</p></div><div class="card"><div class="k">Zone C</div><h3>Cargo</h3><p>Approx. 12 × 6.5 × 4 m gross hold, airlocks and loading systems.</p></div><div class="card"><div class="k">Zones D–E</div><h3>Engineering / Drive</h3><p>Workshop, reactor access, service systems and aft propulsion.</p></div></div>
+<div class="card" style="margin-top:14px"><h3>Mission Philosophy</h3><div class="grid g3"><div><b>Find a crew</b><p class="muted">Small-crew habitation with enough redundancy to support independent operations.</p></div><div><b>Find a job</b><p class="muted">Cargo, courier, passenger, recovery, survey and contract work from one hull.</p></div><div><b>Keep flying</b><p class="muted">Repairability, compartmentalization and system access are core gameplay rather than decoration.</p></div></div></div>
+</section>
+
+<section id="exterior" class="sec">
+<div class="card"><div class="k">Interactive Schematic</div><h2>Exterior Anatomy</h2><div class="controls" id="zchips"></div><div class="stage"><svg viewBox="0 0 1000 430">
+<path id="ZA" d="M55 215 L145 158 L255 153 L330 185 L330 245 L255 277 L145 272Z" fill="#c38320" stroke="#f3b44a" stroke-width="2"/>
+<path id="ZB" d="M330 168 L480 145 L545 170 L545 258 L480 282 L330 260Z" fill="#a9701f" stroke="#f3b44a" stroke-width="2"/>
+<path id="ZC" d="M545 155 L740 160 L795 190 L795 240 L740 275 L545 270Z" fill="#c58123" stroke="#f3b44a" stroke-width="2"/>
+<path id="ZD" d="M795 175 L865 185 L905 207 L905 230 L865 250 L795 258Z" fill="#825b28" stroke="#f3b44a" stroke-width="2"/>
+<path id="ZE" d="M905 186 L965 194 L990 210 L990 228 L965 244 L905 251Z" fill="#444a50" stroke="#8d98a2" stroke-width="2"/>
+<path d="M520 142 L715 125 L775 148 L745 164 L540 160Z" fill="#292f34"/><path d="M520 286 L715 302 L775 278 L745 264 L540 270Z" fill="#292f34"/>
+<circle cx="570" cy="201" r="19" fill="#20262b" stroke="#7c8791" stroke-width="4"/><circle cx="750" cy="201" r="19" fill="#20262b" stroke="#7c8791" stroke-width="4"/>
+</svg></div></div>
+<div class="grid g3" id="zonecards" style="margin-top:14px"></div>
+</section>
+
+<section id="decks" class="sec">
+<div class="card"><div class="k">Internal Geography</div><h2>Deck Plans</h2><div class="controls"><button class="chip dchip on" data-deck="D1">Deck 1</button><button class="chip dchip" data-deck="D2">Deck 2</button><button class="chip dchip" data-deck="S1">Service Deck</button></div><div class="deckwrap"><div class="decksvg"><svg id="decksvg" viewBox="0 0 1000 500"></svg></div><div><input id="decksearch" placeholder="Filter compartments…"><div class="list" id="decklist" style="margin-top:8px"></div></div></div></div>
+</section>
+
+<section id="index" class="sec"><div class="card"><div class="k">Ship Bible Index</div><h2>Compartment Register</h2><input id="compsearch" placeholder="Search rooms, decks, zones, pressure zones…"><div class="table" style="margin-top:10px"><table><thead><tr><th>ID</th><th>Name</th><th>Deck</th><th>Zone</th><th>Pressure</th><th>Function</th></tr></thead><tbody id="comptable"></tbody></table></div></div></section>
+
+<section id="systems" class="sec"><div class="grid g3" id="sysgrid"></div></section>
+
+<section id="pressure" class="sec"><div class="card"><div class="k">Damage Control</div><h2>Pressure-Zone Simulator</h2><p class="muted">Toggle zones to simulate isolation/decompression and see which spaces become unavailable.</p><div class="grid g4" id="pzgrid"></div><div class="result" id="pzresult">All zones nominal.</div></div></section>
+
+<section id="cargo" class="sec">
+<div class="grid g2"><div class="card"><div class="k">Cargo Planning</div><h2>Hold Utilization</h2><div class="form"><div><label>Cargo units</label><input id="cu" type="number" value="8" min="0"></div><div><label>Footprint / unit m²</label><input id="cf" type="number" value="2.25" step=".1"></div><div><label>Mass / unit kg</label><input id="cm" type="number" value="500"></div><div><label>Handling reserve %</label><input id="cr" type="number" value="20" min="0" max="50"></div></div><div class="result" id="cres"></div></div><div class="card"><h3>Canonical Hold</h3><div class="grid g2"><div class="metric"><b>12 m</b><span>Length</span></div><div class="metric"><b>6.5 m</b><span>Width</span></div><div class="metric"><b>4 m</b><span>Height</span></div><div class="metric"><b>78 m²</b><span>Gross Floor Area</span></div></div><p class="muted">Usable area is lower after ribs, safe walking lanes, airlock access, handling gear and ramp clearance.</p></div></div>
+</section>
+
+<section id="crew" class="sec"><div class="grid g2"><div class="card"><div class="k">Crew Configuration</div><h2>Berthing Planner</h2><label>Active crew</label><input id="crew" type="range" min="1" max="8" value="5"><h2 id="crewN">5</h2><label>Passengers</label><input id="pass" type="range" min="0" max="6" value="2"><h2 id="passN">2</h2><div class="result" id="crewres"></div></div><div class="card"><h3>Typical Roles</h3><p><b>Captain / Pilot</b><br><span class="muted">Command, flight, docking and contract decisions.</span></p><p><b>Navigator / Systems</b><br><span class="muted">Navigation, sensors, communications and planning.</span></p><p><b>Engineer</b><br><span class="muted">Reactor, drives, power, repair and damage control.</span></p><p><b>Cargo / EVA</b><br><span class="muted">Loading, airlocks, exterior work and cargo security.</span></p><p><b>Medic / Generalist</b><br><span class="muted">Medical support and secondary watchstanding.</span></p></div></div></section>
+
+<section id="interfaces" class="sec"><div class="card"><div class="k">Exterior Interfaces</div><h2>Hardpoints & Physical Interfaces</h2><div class="table"><table><thead><tr><th>Interface</th><th>Location</th><th>Function</th><th>Design Note</th></tr></thead><tbody id="hardtable"></tbody></table></div></div></section>
+
+<section id="godot" class="sec"><div class="grid g2"><div class="card"><div class="k">Godot Integration</div><h2>Production Coordinates</h2><p><code>1 Godot unit = 1 metre</code></p><p><code>+Z</code> bow · <code>−Z</code> stern · <code>+X</code> starboard · <code>−X</code> port · <code>+Y</code> up</p><pre>StingWasp
+├── FlightBody
+│   ├── Exterior
+│   ├── ExteriorCollision
+│   ├── DockingPorts
+│   ├── LandingGear
+│   └── CargoRamp
+├── Interior
+│   ├── Deck01
+│   ├── Deck02
+│   ├── ServiceDeck
+│   └── Engineering
+├── Systems
+├── InteractionPoints
+└── Navigation</pre></div><div class="card"><h2>MVP Validation</h2><div id="checks"></div><div class="bar"><i id="prog" style="width:0"></i></div><p class="muted" id="progtext"></p></div></div></section>
+
+</div></main></div>
+<script>
+const zones=[
+["A","Nose / Cockpit","Forward flight deck, canopy, controls, sensors and avionics."],
+["B","Crew / Habitation","Captain, crew, galley, commons, med and passenger spaces."],
+["C","Cargo / Operations","Primary hold, handling equipment, airlocks and ramp."],
+["D","Engineering","Engineering control, workshop, reactor access and service interfaces."],
+["E","Drive","Main propulsion, reaction mass, RCS and aft machinery."]
+];
+const decks={
+D1:[
+["D1-01","Cockpit","Flight control","PZ-01",12,5,17,18],["D1-02","Avionics","Sensors / flight computers","PZ-01",22,5,17,18],["D1-03","Captain's Cabin","Command berth","PZ-02",32,4,16,19],["D1-04","Crew Quarters","Crew bunks / lockers","PZ-02",41,4,19,20],["D1-05","Head / Shower","Sanitation","PZ-03",51,5,10,18],["D1-06","Galley","Food preparation","PZ-03",62,4,14,19],["D1-07","Mess / Commons","Dining / meetings","PZ-03",61,29,19,20],["D1-08","Medbay","Medical treatment","PZ-03",50,29,10,20],["D1-09","Passenger A","Passenger berth","PZ-03",39,30,9,16],["D1-10","Passenger B","Passenger berth","PZ-03",29,30,9,16],["D1-11","Engineering Control","Systems watch","PZ-07",73,6,12,17],["D1-12","Workshop","Repair / fabrication","PZ-07",79,29,13,18],["D1-13","Reactor Access","Shielded machinery access","PZ-08",87,10,9,28]],
+D2:[
+["D2-01","Main Cargo Hold","Approx. 12 × 6.5 × 4 m","PZ-04",24,8,52,31],["D2-02","Port Airlock","Primary docking / EVA","PZ-05",14,20,9,14],["D2-03","Starboard Airlock","Secondary EVA","PZ-06",78,20,9,14],["D2-04","EVA Locker","Suit storage","PZ-05",16,39,15,11],["D2-05","Utility Storage","Mission stores","PZ-04",33,41,17,11],["D2-06","Cargo Crane","Handling bridge","PZ-04",53,41,14,11],["D2-07","Cargo Lift","Vertical transfer","PZ-04",70,41,11,11],["D2-08","Cargo Ramp","Ventral loading interface","PZ-04",42,3,20,9]],
+S1:[
+["S1-01","Life Support","Atmosphere processing","PZ-08",16,9,18,19],["S1-02","Power Distribution","Primary electrical bus","PZ-08",38,9,18,19],["S1-03","Cooling","Thermal loops","PZ-08",60,9,18,19],["S1-04","Fuel / Reaction Mass","Feed management","PZ-08",25,34,20,19],["S1-05","Waste Processing","Water / waste recovery","PZ-08",50,34,20,19],["S1-06","Maintenance Crawlway","Machinery access","PZ-08",74,34,12,19]]
+};
+const comps=[
+["STW-001","Cockpit","Deck 1","A","PZ-01","Primary flight deck"],["STW-002","Avionics","Deck 1","A","PZ-01","Flight computing / sensors"],["STW-003","Captain's Cabin","Deck 1","B","PZ-02","Command berth"],["STW-004","Crew Quarters","Deck 1","B","PZ-02","Crew berthing"],["STW-005","Head / Shower","Deck 1","B","PZ-03","Sanitation"],["STW-006","Galley","Deck 1","B","PZ-03","Food preparation"],["STW-007","Mess / Common Room","Deck 1","B","PZ-03","Crew commons"],["STW-008","Medbay","Deck 1","B","PZ-03","Medical treatment"],["STW-009","Passenger Cabin A","Deck 1","B","PZ-03","Passenger berth"],["STW-010","Passenger Cabin B","Deck 1","B","PZ-03","Passenger berth"],["STW-011","Main Cargo Hold","Deck 2","C","PZ-04","Cargo operations"],["STW-012","Port Airlock","Deck 2","C","PZ-05","Docking / EVA"],["STW-013","Starboard Airlock","Deck 2","C","PZ-06","EVA / emergency"],["STW-014","EVA Locker","Deck 2","C","PZ-05","EVA equipment"],["STW-015","Cargo Crane","Deck 2","C","PZ-04","Cargo handling"],["STW-016","Cargo Lift","Deck 2","C","PZ-04","Vertical transfer"],["STW-017","Engineering Control","Deck 1","D","PZ-07","Engineering watch"],["STW-018","Workshop","Deck 1","D","PZ-07","Repair / fabrication"],["STW-019","Reactor Access","Deck 1","D","PZ-08","Reactor maintenance"],["STW-020","Life Support","Service","D","PZ-08","Environmental machinery"],["STW-021","Power Distribution","Service","D","PZ-08","Electrical distribution"],["STW-022","Cooling","Service","D","PZ-08","Thermal management"],["STW-023","Fuel Systems","Service","E","PZ-08","Fuel / reaction mass"],["STW-024","Drive Machinery","Aft","E","PZ-08","Primary propulsion"]];
+const systems=[["Flight Control","Flight-body control authority, pilot interfaces and maneuvering.",84],["Navigation / Sensors","Navigation solution, sensors, approach alignment and mission plotting.",78],["Main Drives","Primary propulsion concentrated in aft Zone E.",88],["FTL System","Long-range drive machinery associated with engineering.",64],["Reactor / Power","Generation, distribution, isolation and emergency power.",74],["Life Support","Atmosphere, water and environmental management.",80],["Thermal Control","Cooling loops and machinery heat rejection.",72],["Docking","Port primary docking plus secondary starboard EVA interface.",86],["Cargo Handling","Ramp, lift, crane, tie-downs and loading clearances.",92]];
+const hard=[["Port Docking Collar","Port cargo zone","Primary docking / EVA","Aligns to Deck 2 port airlock"],["Starboard Airlock Interface","Starboard cargo zone","Secondary EVA / emergency","Independent pressure zone"],["Ventral Cargo Door / Ramp","Lower cargo abdomen","Loading / unloading","Landing gear must clear ramp sweep"],["Forward Landing Gear ×2","Forward-mid ventral hull","Ground support","Wide loaded-transport stance"],["Aft Landing Gear ×2","Aft ventral hull","Ground support","Clear of cargo access"],["Main Drive Cluster","Aft / Zone E","Primary propulsion","Serviced from engineering"],["RCS Clusters","Forward + aft exterior","Attitude / translation","Distributed for torque authority"],["Exterior Service Panels","Multiple hull zones","Maintenance","Must correspond to underlying systems"]];
+const pz={"PZ-01":"Cockpit / Avionics","PZ-02":"Crew Quarters","PZ-03":"Habitation / Med / Galley","PZ-04":"Cargo","PZ-05":"Port Airlock","PZ-06":"Starboard Airlock","PZ-07":"Engineering Control / Workshop","PZ-08":"Reactor / Service / Drive"};
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+$$(".nav button").forEach(b=>b.onclick=()=>{$$(".nav button").forEach(x=>x.classList.remove("on"));b.classList.add("on");$$(".sec").forEach(x=>x.classList.remove("on"));$("#"+b.dataset.sec).classList.add("on")});
+$("#zchips").innerHTML=zones.map(z=>`<button class="chip" data-z="${z[0]}">Zone ${z[0]}</button>`).join("");
+$("#zonecards").innerHTML=zones.map(z=>`<div class="card"><div class="k">Zone ${z[0]}</div><h3>${z[1]}</h3><p class="muted">${z[2]}</p></div>`).join("");
+$$("[data-z]").forEach(b=>b.onclick=()=>{let e=$("#Z"+b.dataset.z);e.style.filter=e.style.filter?"":"brightness(1.5) drop-shadow(0 0 10px #f0a62b)"});
+function deck(d="D1"){let a=decks[d],s=$("#decksvg");s.innerHTML=`<path d="M45 245Q45 80 200 55L840 55Q930 70 945 245Q930 420 840 440L200 440Q45 410 45 245Z" fill="#0d1217" stroke="#4d5963" stroke-width="3"/>`;a.forEach(r=>{let [id,n,desc,z,x,y,w,h]=r,px=55+x*8.4,py=55+y*7.6,pw=w*8.4,ph=h*7.6;s.innerHTML+=`<g><rect x="${px}" y="${py}" width="${pw}" height="${ph}" rx="5" fill="#57411d" stroke="#8e9aa4"/><text x="${px+7}" y="${py+17}" fill="white" font-size="12">${n}</text><text x="${px+7}" y="${py+32}" fill="#c8d0d7" font-size="9">${z}</text></g>`});$("#decklist").innerHTML=a.map(r=>`<div class="item" data-s="${(r[1]+" "+r[2]+" "+r[3]).toLowerCase()}"><b>${r[0]} · ${r[1]}</b><small>${r[3]} · ${r[2]}</small></div>`).join("")}
+deck();$$(".dchip").forEach(b=>b.onclick=()=>{$$(".dchip").forEach(x=>x.classList.remove("on"));b.classList.add("on");deck(b.dataset.deck)});$("#decksearch").oninput=e=>{$$("#decklist .item").forEach(x=>x.style.display=x.dataset.s.includes(e.target.value.toLowerCase())?"":"none")};
+function renderComp(q=""){ $("#comptable").innerHTML=comps.filter(r=>r.join(" ").toLowerCase().includes(q.toLowerCase())).map(r=>`<tr>${r.map(x=>`<td>${x}</td>`).join("")}</tr>`).join("")}renderComp();$("#compsearch").oninput=e=>renderComp(e.target.value);
+$("#sysgrid").innerHTML=systems.map(s=>`<div class="card sys"><h3>${s[0]}</h3><p class="muted">${s[1]}</p><div class="bar"><i style="width:${s[2]}%"></i></div><small>${s[2]}% definition</small></div>`).join("");
+let ps={};$("#pzgrid").innerHTML=Object.entries(pz).map(([id,n])=>`<div class="card"><div class="k">${id}</div><h3>${n}</h3><button class="chip pzb" data-pz="${id}">Toggle Isolation</button><p class="ok st">NOMINAL</p></div>`).join("");$$(".pzb").forEach(b=>b.onclick=()=>{let id=b.dataset.pz;ps[id]=!ps[id];let st=b.parentElement.querySelector(".st");st.textContent=ps[id]?"ISOLATED":"NOMINAL";st.className=ps[id]?"bad st":"ok st";let down=Object.keys(ps).filter(x=>ps[x]);$("#pzresult").innerHTML=down.length?`<b>${down.join(", ")}</b> isolated. Affected: ${comps.filter(r=>down.includes(r[4])).map(r=>r[1]).join(", ")}.`:"All zones nominal."});
+function calcCargo(){let u=+$("#cu").value||0,f=+$("#cf").value||0,m=+$("#cm").value||0,r=+$("#cr").value||0,g=78,usable=g*(1-r/100),used=u*f,pct=used/usable*100;$("#cres").innerHTML=`Planned usable floor: <b>${usable.toFixed(1)} m²</b><br>Requested footprint: <b>${used.toFixed(1)} m²</b> (${pct.toFixed(0)}%)<br>Total entered cargo mass: <b>${(u*m/1000).toFixed(2)} t</b><br><span class="${pct<=100?"ok":"bad"}">${pct<=100?"Fits by floor-area estimate.":"Exceeds planned floor area."}</span>`}["cu","cf","cm","cr"].forEach(id=>$("#"+id).oninput=calcCargo);calcCargo();
+function crew(){let c=+$("#crew").value,p=+$("#pass").value;$("#crewN").textContent=c;$("#passN").textContent=p;$("#crewres").innerHTML=`Total embarked: <b>${c+p}</b><br><span class="${c+p<=7?"ok":"bad"}">${c+p<=7?"Nominal small-crew configuration.":"High-density configuration; mission spaces may need conversion."}</span>`}$("#crew").oninput=$("#pass").oninput=crew;crew();
+$("#hardtable").innerHTML=hard.map(r=>`<tr>${r.map(x=>`<td>${x}</td>`).join("")}</tr>`).join("");
+const checks=["Exterior envelope locked to 31 × 10.5 × 8.2 m","Cockpit walk-through works at human scale","Deck 1 circulation unobstructed","Cargo hold accepts representative cargo","Port airlock aligns with docking interface","Starboard EVA route is independent","Deck-to-deck access physically traversable","Engineering reachable during normal operation","Landing gear clears cargo ramp","Navmesh supports complete crew traversal","Pressure zones isolate independently","Player can pilot, stand, exit, dock and re-enter"];
+$("#checks").innerHTML=checks.map(x=>`<label style="display:flex;gap:8px;margin:8px 0"><input style="width:auto" type="checkbox" class="ck">${x}</label>`).join("");$$(".ck").forEach(c=>c.onchange=()=>{let n=$$(".ck").filter(x=>x.checked).length,p=Math.round(n/checks.length*100);$("#prog").style.width=p+"%";$("#progtext").textContent=`${n}/${checks.length} validation targets complete (${p}%).`});
+</script>
+</body></html>
