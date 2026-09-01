@@ -138,7 +138,7 @@
 9. **Architecture**
 
    ```text
-   WaywardSky
+   NoFixedStar
        │
        ├── Player
        │
