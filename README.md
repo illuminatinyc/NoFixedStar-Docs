@@ -176,8 +176,6 @@ Debug controls: `F3` overlay, `F7` refill fuel, `F8` skip-dock recovery, `F9` co
 
 ## Project Documentation
 
-- [DEVPLAN.md](DEVPLAN.md): locked first-playable scope, technical design, MVP gates
-- [theplan.txt](STW-T91.html): long-term identity, world vision, and production roadmap
 - [SHIP_TASKS.md](SHIP_TASKS.md): completed StingWasp implementation tracker and residual QA
 - [SHIP_REFERENCE.md](SHIP_REFERENCE.md): current as-built StingWasp reference
 
