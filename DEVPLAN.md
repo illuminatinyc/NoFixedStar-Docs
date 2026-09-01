@@ -10,7 +10,7 @@
    * “Find a crew. Find a job. Keep flying.”
    * Space-western sandbox philosophy
    * Player fantasy
-   * Why WaywardSky exists
+   * Why No Foxed Star exists
    * What differentiates it from a conventional space combat game
 
 3. **Core Gameplay Loop**
@@ -111,14 +111,8 @@
    PHASE 17 — Beta
    PHASE 18 — Release
    ```
-
-   Those names/count are only an illustration until I see your canonical roadmap. I won't quietly promote my example into project law.
-
+   
 8. **Completed Work**
-
-   This is especially important.
-
-   Instead of a vague percentage, show actual evidence:
 
    ```text
    STINGWASP
@@ -141,11 +135,7 @@
    🟡 Production StingWasp geometry
    ```
 
-   Those are grounded in the ship structure/files you've shown in this conversation, but I'd verify them against the repository before declaring them completed in the final README.
-
 9. **Architecture**
-
-   Show the actual system relationship:
 
    ```text
    WaywardSky
@@ -180,8 +170,6 @@
 
 11. **Design Principles**
 
-    This is where the project gets personality:
-
     > **The ship is a place, not a menu.**
 
     > **Cargo physically exists.**
@@ -196,24 +184,16 @@
 
     > **The player should become attached to their ship because they live aboard it.**
 
-    That communicates WaywardSky better than fifty feature bullets.
-
 12. **Repository Structure**
 
 13. **Build / Run Instructions**
 
 14. **Contribution / Current Needs**
 
-    This could explicitly include your current need for a 3D modeller for the StingWasp, with the canonical drawings/specifications available.
-
 15. **Long-Term Vision**
 
-    Explain what WaywardSky becomes after the vertical slice rather than letting visitors assume the StingWasp demo *is* the whole game.
-
-The really useful part is that we can make the top of the README immediately communicate development state:
-
 ```text
-WAYWARD SKY
+No Fixed Star
 Find a crew. Find a job. Keep flying.
 
 Engine        Godot 4.7 / C#
