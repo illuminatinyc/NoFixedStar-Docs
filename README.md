@@ -1,4 +1,4 @@
-# No Fixed Star
+# No Fixed Star (STW-T01 StingWasp Transport)
 
 ![StingWasp transport](stingwasp-hero.jpg)
 
