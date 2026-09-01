@@ -1,0 +1,8 @@
+# STW-T01 material
+newmtl StingWaspDeckGrey
+Ka 0.12 0.12 0.12
+Kd 0.62 0.62 0.62
+Ks 0.18 0.18 0.18
+Ns 48
+d 1.0
+illum 2

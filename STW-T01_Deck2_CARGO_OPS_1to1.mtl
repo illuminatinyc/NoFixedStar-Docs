@@ -1,0 +1,56 @@
+# STW-T01 Deck 2 Cargo & Operations materials
+newmtl Deck
+Ka 0.10 0.10 0.10
+Kd 0.42 0.42 0.42
+Ks 0.10 0.10 0.10
+Ns 24
+illum 2
+
+newmtl Bulkhead
+Ka 0.12 0.12 0.12
+Kd 0.62 0.62 0.62
+Ks 0.20 0.20 0.20
+Ns 48
+illum 2
+
+newmtl CargoBulkhead
+Ka 0.10 0.10 0.10
+Kd 0.52 0.52 0.52
+Ks 0.16 0.16 0.16
+Ns 36
+illum 2
+
+newmtl Fixture
+Ka 0.10 0.10 0.10
+Kd 0.48 0.48 0.48
+Ks 0.16 0.16 0.16
+Ns 32
+illum 2
+
+newmtl Console
+Ka 0.05 0.05 0.05
+Kd 0.24 0.27 0.30
+Ks 0.32 0.32 0.32
+Ns 64
+illum 2
+
+newmtl Machinery
+Ka 0.05 0.05 0.05
+Kd 0.32 0.34 0.36
+Ks 0.25 0.25 0.25
+Ns 48
+illum 2
+
+newmtl Cargo
+Ka 0.08 0.08 0.08
+Kd 0.43 0.38 0.27
+Ks 0.12 0.12 0.12
+Ns 24
+illum 2
+
+newmtl Metal
+Ka 0.05 0.05 0.05
+Kd 0.30 0.32 0.34
+Ks 0.40 0.40 0.40
+Ns 80
+illum 2

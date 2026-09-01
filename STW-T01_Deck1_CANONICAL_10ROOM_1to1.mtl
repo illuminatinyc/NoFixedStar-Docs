@@ -1,0 +1,49 @@
+# STW-T01 Deck 1 canonical 10-room materials
+newmtl Deck
+Ka 0.10 0.10 0.10
+Kd 0.42 0.42 0.42
+Ks 0.10 0.10 0.10
+Ns 24
+illum 2
+
+newmtl Bulkhead
+Ka 0.12 0.12 0.12
+Kd 0.63 0.63 0.63
+Ks 0.20 0.20 0.20
+Ns 48
+illum 2
+
+newmtl Fixture
+Ka 0.10 0.10 0.10
+Kd 0.49 0.49 0.49
+Ks 0.16 0.16 0.16
+Ns 32
+illum 2
+
+newmtl Console
+Ka 0.05 0.05 0.05
+Kd 0.24 0.27 0.30
+Ks 0.32 0.32 0.32
+Ns 64
+illum 2
+
+newmtl Machinery
+Ka 0.05 0.05 0.05
+Kd 0.32 0.34 0.36
+Ks 0.25 0.25 0.25
+Ns 48
+illum 2
+
+newmtl Medical
+Ka 0.12 0.12 0.12
+Kd 0.68 0.68 0.68
+Ks 0.18 0.18 0.18
+Ns 32
+illum 2
+
+newmtl Metal
+Ka 0.05 0.05 0.05
+Kd 0.30 0.32 0.34
+Ks 0.40 0.40 0.40
+Ns 80
+illum 2

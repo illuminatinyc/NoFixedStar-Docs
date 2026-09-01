@@ -1,0 +1,12 @@
+newmtl Hull_Ochre
+Kd .48 .31 .10
+newmtl Metal_Dark
+Kd .10 .11 .12
+newmtl Structural_Dark
+Kd .06 .065 .07
+newmtl Engine_Dark
+Kd .035 .038 .042
+newmtl Canopy_Glass
+Kd .08 .16 .18
+d .42
+illum 4
