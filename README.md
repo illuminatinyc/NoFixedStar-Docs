@@ -94,6 +94,20 @@ The project has **15 total development phases**, numbered 0 through 14. The road
 | 13 | Release candidate: QA, accessibility, localization, performance | Planned |
 | 14 | Launch: PC first; console review afterward | Planned |
 
+---
+Development Roadmap
+The project follows a 15-phase roadmap, ensuring systemic foundations are proven before expanding content.
+
+Implementation Phases
+Phase 0 & 1: Preproduction, game design, and core foundation implementation including save frameworks and input.
+Phase 2: Ship prototype focusing on the interior, physics, and docking.
+Phase 3: Crew simulation encompassing needs, schedules, AI behaviors, and recruitment.
+Phase 4 & 5: Economy (credits, fuel, markets) and the Contract System (objectives, complications, rewards).
+Phase 6 & 7: Dynamic narrative events (Event Director) and combat mechanics (ship and character weapons).
+Phase 8 & 9: World expansion (planets, stations) followed by a fully integrated Vertical Slice.
+Phase 10 & 11: Full production of content and progression into Alpha feature-completion.
+Phase 12 to 14: Beta content-completion, Release Candidate QA, and final PC launch.
+
 ## What Is Explicitly Out Of Scope Right Now
 
 The first playable does not include combat, boarding, planetary walking, settlements, recruitment, factions, reputation networks, multiplayer, mod support, multiple active ship classes, procedural event direction, or generative dialogue. These are future design goals, not current promises.
