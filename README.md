@@ -162,10 +162,11 @@ Debug controls: `F3` overlay, `F7` refill fuel, `F8` skip-dock recovery, `F9` co
 ## Project Documentation
 
 - [DEVPLAN.md](DEVPLAN.md): locked first-playable scope, technical design, MVP gates
-- [theplan.txt](theplan.txt): long-term identity, world vision, and production roadmap
+- [theplan.txt](STW-T91.html): long-term identity, world vision, and production roadmap
 - [SHIP_TASKS.md](SHIP_TASKS.md): completed StingWasp implementation tracker and residual QA
 - [SHIP_REFERENCE.md](SHIP_REFERENCE.md): current as-built StingWasp reference
 
 ## Contributing Scope
 
-Keep changes aligned with the current MVP gate. Preserve the active StingWasp, gameplay anchors, save compatibility, and the one-ship scope unless a change is explicitly approved. Do not add later-phase systems simply because they appear in the long-term vision.
+Lead Architect & Programmer:
+Jose R Rivera - LunaARC Labs
